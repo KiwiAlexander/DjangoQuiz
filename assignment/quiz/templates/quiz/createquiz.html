@@ -1,0 +1,100 @@
+{% extends 'quiz/base.html' %}
+
+{% block content %}
+
+<h1 class="site-heading text-center text-white d-none d-lg-block">
+      <span class="site-heading-upper text-primary mb-3">A Free Bootstrap 4 Business Theme</span>
+      <span class="site-heading-lower">Create Quiz</span>
+    </h1>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark py-lg-4" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand text-uppercase text-expanded font-weight-bold d-lg-none" href="#">Start Bootstrap</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav mx-auto">
+            <ul class="navbar-nav mx-auto">
+            <li class="nav-item active px-lg-4">
+              <a class="nav-link text-uppercase text-expanded" href="{% url 'index' %}">Home
+                <span class="sr-only">(current)</span>
+              </a>
+            </li>
+            <li class="nav-item px-lg-4">
+              <a class="nav-link text-uppercase text-expanded" href="{% url 'game' %}">Quiz</a>
+            </li>
+            <li class="nav-item px-lg-4">
+              <a class="nav-link text-uppercase text-expanded" href="{% url 'createquiz' %}">Create Quiz</a>
+            </li>
+            <li class="nav-item px-lg-4">
+              <a class="nav-link text-uppercase text-expanded" href="{% url 'scoreboard' %}">Scoreboard</a>
+            </li>
+            <li class="nav-item px-lg-4">
+              <a class="nav-link text-uppercase text-expanded" href="{% url 'logout' %}">Logout</a>
+            </li>
+          </ul>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <section class="page-section cta">
+      <div class="container">
+        <div class="row">
+          <div class="col-xl-9 mx-auto">
+            <div class="cta-inner text-center rounded">
+              <h2 class="section-heading mb-5">
+                <span class="section-heading-upper">Build your own</span>
+                <span class="section-heading-lower">Quiz</span>
+              </h2>
+
+              <form method="post">
+                {% csrf_token %}
+                <select name="difficulty">
+                  <option value="easy">Easy</option>
+                  <option value="medium">Medium</option>
+                  <option value="hard">Hard</option>
+                </select>
+                <select name="category">
+                  <option value="GeneralKnowledge">General Knowledge</option>
+                  <option value="Books">Entertainment: Books</option>
+                  <option value="Film">Entertainment: Film</option>
+                  <option value="Music">Entertainment: Music</option>
+                  <option value="MusicalTheatres">Entertainment: Musical Theatres</option>
+                  <option value="Television">Entertainment: Television</option>
+                  <option value="ScienceNature">Science and Nature</option>
+                  <option value="ScienceComputers">Science: Computers</option>
+                </select>
+                <br><br>
+                <input type="submit">
+              </form>
+
+              <p class="address mb-5">
+                <em>
+                  <strong>1116 Orchard Street</strong>
+                  <br>
+                  Golden Valley, Minnesota
+                </em>
+              </p>
+              <p class="mb-0">
+                <small>
+                  <em>Call Anytime</em>
+                </small>
+                <br>
+                (317) 585-8468
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer text-faded text-center py-5">
+      <div class="container">
+        <p class="m-0 small">Copyright &copy; Your Website 2018</p>
+      </div>
+    </footer>
+
+{% endblock %}

@@ -1,0 +1,11 @@
+Admin Username & Pass:
+
+test
+testtest123
+
+cd Scripts
+Activiate
+
+cd assignment
+
+python manage.py runserver

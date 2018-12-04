@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+<h1> SHOWING JSON DATA </h1>
+	<div>
+        <div>
+            <table>
+                <thead>
+                <tr>
+                  <th> category <i class="icon-sort"></i></th>
+                  <th> type <i class="icon-sort"></i></th>
+                  <th> difficulty <i class="icon-sort"></i></th>
+                  <th> question <i class="icon-sort"></i></th>
+                  <th> correct_answer <i class="icon-sort"></i></th>
+                  <th> incorrect_answers <i class="icon-sort"></i></th>
+                </tr>
+            </thead>
+            <tbody>
+"{{ data }}"
+            {% for key in data %}
+                <tr>
+                    <td>{{ key.category }}</td>
+                    <td>{{ key.type }}</td>
+                    <td>{{ key.difficulty }}</td>
+                    <td>{{ key.question }}</td>
+                    <td>{{ key.correct_answer }}</td>
+                    <td>{{ key.incorrect_answers }}</td>
+                </tr>
+            {% endfor %}
+
+            </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
